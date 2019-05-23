@@ -163,7 +163,7 @@ abstract class Entity
         
         self::$_manager->setEntityUrl($entityToQuery, 'search');
         self::$_manager->cleanQueryParams($entityToQuery);
-        self::$_manager->setQueryParams($entityToQuery, $filters);
+        self::$_manager->setRawQueryJsonData($entityToQuery, $filters);
 
         $response = self::$_manager->execute($entityToQuery, 'get');
         if ($response['code'] == "200" || $response['code'] == "201") {
